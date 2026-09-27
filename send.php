@@ -6,9 +6,9 @@
  */
 
 // ===== Настройки =====
-$TO_EMAIL   = 'info@example.ru';        // куда приходят заявки
-$FROM_EMAIL = 'no-reply@example.ru';    // адрес отправителя на домене сайта
-$SITE_NAME  = 'ЭнергоМонтаж';
+$TO_EMAIL   = 'energostroy2026@mail.ru'; // куда приходят заявки
+$FROM_EMAIL = 'no-reply@example.ru';     // замените на адрес на домене сайта, например no-reply@ваш-домен.ru
+$SITE_NAME  = 'ЭнергоСтройРесурс';
 
 // Telegram (необязательно): токен бота от @BotFather и ID чата
 $TELEGRAM_BOT_TOKEN = '';

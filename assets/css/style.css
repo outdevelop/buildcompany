@@ -48,7 +48,7 @@
   --fs-h4: 1.25rem;
   --fs-h3: 1.625rem;
   --fs-h2: clamp(2rem, 3.4vw, 2.875rem);
-  --fs-h1: clamp(2.3rem, 4.3vw, 3.6rem);
+  --fs-h1: clamp(2.1rem, 4vw, 3.4rem);
 
   --radius: 6px;
   --container: 1240px;
@@ -254,6 +254,7 @@ button { font: inherit; }
   font-stretch: 88%;
   letter-spacing: .01em;
 }
+.logo__name b { font-weight: inherit; color: var(--copper); }
 .logo__tag {
   margin-top: 3px;
   font-family: var(--f-mono);
@@ -647,7 +648,7 @@ button { font: inherit; }
 
 .legend {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px 32px;
   margin-top: 40px;
   counter-reset: none;
@@ -716,6 +717,156 @@ button { font: inherit; }
 }
 .partner__logo img { max-height: 40px; width: auto; object-fit: contain; }
 .partner__cat { font-size: .875rem; font-weight: 500; line-height: 1.35; }
+
+
+/* ---------- Опыт ---------- */
+.projects { background: var(--surface); }
+.key-clients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.key-clients li {
+  padding: 10px 16px;
+  background: var(--ink);
+  color: var(--on-ink);
+  border-radius: 4px;
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-stretch: 92%;
+  font-size: 1.0625rem;
+}
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+.project {
+  padding: 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.project__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed var(--line);
+}
+.project__head .icon { width: 26px; height: 26px; color: var(--copper-deep); }
+.project__head h3 {
+  font-family: var(--f-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-stretch: 92%;
+  line-height: 1.2;
+}
+.project__list li { padding-block: 10px; border-bottom: 1px solid var(--line); }
+.project__list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.project__list b { display: block; font-weight: 600; font-size: .96875rem; line-height: 1.35; }
+.project__list span { display: block; margin-top: 3px; font-size: .875rem; line-height: 1.45; color: var(--muted); }
+
+/* ---------- Дилеры ---------- */
+.dealers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.dealer-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  text-decoration: none;
+  overflow: hidden;
+}
+.dealer-card__name {
+  font-family: var(--f-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-stretch: 88%;
+  line-height: 1.1;
+}
+.dealer-card__cat { color: var(--muted); font-size: .9375rem; line-height: 1.45; }
+.dealer-card__doc {
+  margin-top: auto;
+  padding-top: 14px;
+  font-family: var(--f-mono);
+  font-size: .75rem;
+  line-height: 1.5;
+  color: var(--copper-deep);
+}
+.dealer-card--cert::after {
+  content: "Сертификат ↗";
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-family: var(--f-mono);
+  font-size: .6875rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--copper-deep);
+}
+.dealer-card--cert:hover { border-color: rgba(232, 144, 78, .6); }
+.certs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.cert {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color .2s;
+}
+.cert img { display: block; width: 100%; height: 240px; object-fit: contain; background: #fff; }
+.cert span { font-size: .875rem; font-weight: 500; }
+.cert:hover { border-color: rgba(232, 144, 78, .6); }
+
+.suppliers {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid #CDD4DA;
+}
+.suppliers__title {
+  font-family: var(--f-display);
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  font-stretch: 92%;
+  margin-bottom: 16px;
+}
+.suppliers__list { margin: 0; display: grid; }
+.suppliers__list > div {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 4px 24px;
+  padding-block: 12px;
+  border-bottom: 1px solid #CDD4DA;
+}
+.suppliers__list dt {
+  font-family: var(--f-mono);
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 3px;
+}
+.suppliers__list dd { margin: 0; font-weight: 500; }
 
 /* ---------- Процесс ---------- */
 .process { background: var(--paper); }
@@ -1082,6 +1233,8 @@ button { font: inherit; }
   .header__phone span { display: none; }
   .header__phone { padding: 10px; border: 1px solid var(--line-ink); border-radius: var(--radius); }
   .legend { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .projects__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dealers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 1024px) {
@@ -1188,6 +1341,8 @@ button { font: inherit; }
   .hero__legend-mark { flex-basis: 100%; justify-content: center; }
 
   .legend { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .projects__grid, .dealers, .certs { grid-template-columns: minmax(0, 1fr); }
+  .suppliers__list > div { grid-template-columns: minmax(0, 1fr); }
   .perks { grid-template-columns: minmax(0, 1fr); }
 
   .steps { grid-template-columns: minmax(0, 1fr); gap: 0; }
