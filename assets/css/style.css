@@ -869,46 +869,49 @@ button { font: inherit; }
 
 /* ---------- Процесс ---------- */
 .process { background: var(--paper); }
-.steps {
-  position: relative;
+.flow { border-top: 2px solid var(--text); }
+.flow__row {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 32px 28px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 12px 32px;
+  align-items: baseline;
+  padding-block: 24px;
+  border-bottom: 1px solid var(--line);
 }
-.steps::before {
-  content: "";
-  position: absolute;
-  top: 23px;
-  left: 24px;
-  right: calc((100% - 4 * 28px) / 5 - 24px);
-  height: 2px;
-  background: repeating-linear-gradient(90deg, var(--copper) 0 14px, transparent 14px 22px);
-  opacity: .7;
-}
-.step { position: relative; }
-.step__num {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  margin-bottom: 22px;
-  border: 1.5px solid var(--copper);
-  border-radius: 50%;
-  background: var(--paper);
+.flow__row--head {
+  padding-block: 12px;
   font-family: var(--f-mono);
-  font-size: .9375rem;
-  font-weight: 500;
+  font-size: var(--fs-xs);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.flow__stage { display: flex; align-items: baseline; gap: 16px; }
+.flow__num {
+  font-family: var(--f-mono);
+  font-size: .875rem;
   color: var(--copper-deep);
-  position: relative;
+  font-variant-numeric: tabular-nums;
 }
-.step__title {
+.flow__stage h3 {
   font-family: var(--f-display);
-  font-size: var(--fs-h4);
+  font-size: 1.375rem;
   font-weight: 600;
-  font-stretch: 92%;
-  margin-bottom: 8px;
+  font-stretch: 90%;
+  line-height: 1.2;
 }
-.step p { color: var(--muted); font-size: .96875rem; line-height: 1.5; }
+.flow__do, .flow__you { color: var(--muted); font-size: .96875rem; line-height: 1.5; }
+.flow__res {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-weight: 500;
+  font-size: .96875rem;
+  line-height: 1.45;
+}
+.flow__res .icon { width: 20px; height: 20px; margin-top: 1px; color: var(--copper-deep); }
+.flow__label { display: none; }
+.flow__row:hover .flow__stage h3 { color: var(--copper-deep); }
 
 /* ---------- Преимущества ---------- */
 .why { background: var(--surface); }
@@ -1299,8 +1302,11 @@ button { font: inherit; }
   .faq__grid,
   .request__grid { grid-template-columns: minmax(0, 1fr); }
 
-  .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .steps::before { display: none; }
+  .flow__row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .flow__row--head { display: none; }
+  .flow__label { display: block; margin-bottom: 2px; font-family: var(--f-mono); font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+  .flow__res { display: block; }
+  .flow__res .icon { display: none; }
 
   .why__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
@@ -1344,26 +1350,20 @@ button { font: inherit; }
   .suppliers__list > div { grid-template-columns: minmax(0, 1fr); }
   .perks { grid-template-columns: minmax(0, 1fr); }
 
-  .steps { grid-template-columns: minmax(0, 1fr); gap: 0; }
-  .step {
-    display: grid;
-    grid-template-columns: 48px minmax(0, 1fr);
-    column-gap: 18px;
-    padding-bottom: 28px;
+  .flow__row { grid-template-columns: minmax(0, 1fr); gap: 8px; padding-block: 20px; }
+  .flow__row--head { display: none; }
+  .flow__label {
+    display: block;
+    margin-bottom: 2px;
+    font-family: var(--f-mono);
+    font-size: .6875rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 400;
   }
-  .step::before {
-    content: "";
-    position: absolute;
-    left: 23px;
-    top: 48px;
-    bottom: 0;
-    width: 2px;
-    background: repeating-linear-gradient(180deg, var(--copper) 0 10px, transparent 10px 16px);
-    opacity: .6;
-  }
-  .step:last-child::before { display: none; }
-  .step__num { grid-row: span 2; margin: 0; }
-  .step__title { margin-top: 10px; }
+  .flow__res { display: block; }
+  .flow__res .icon { display: none; }
 
   .why__grid { grid-template-columns: minmax(0, 1fr); }
   .why__item { padding-block: 24px; }
