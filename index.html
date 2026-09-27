@@ -1,0 +1,962 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ЭнергоМонтаж — поставка и монтаж электрооборудования, освещения и кровли</title>
+  <meta name="description" content="Поставка и монтаж электро- и энергооборудования, светодиодной и кабельной продукции по ценам официального дилера. Монтаж зенитных фонарей, люков дымоудаления и кровли под ключ.">
+  <meta name="theme-color" content="#0D1620">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ЭнергоМонтаж — электрооборудование, свет и кровля под ключ">
+  <meta property="og:description" content="Официальный дилер. Поставка электро- и энергооборудования, LED и кабеля. Монтаж сетей, зенитных фонарей, люков дымоудаления и кровли.">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tektur:wdth,wght@75..100,400..800&family=Golos+Text:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Иконки: используются через <svg><use href="#i-..."/></svg> -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-panel" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><path d="M3.5 9h17M7.5 12.5v4M10.5 12.5v4M13.5 12.5v4M16.5 12.5v4"/></symbol>
+  <symbol id="i-transformer" viewBox="0 0 24 24"><circle cx="9" cy="12" r="5.2"/><circle cx="15" cy="12" r="5.2"/><path d="M1.5 12h2.3M20.2 12h2.3"/></symbol>
+  <symbol id="i-led" viewBox="0 0 24 24"><path d="M12 2.5V6M6.5 6h11l3 6h-17z"/><path d="M8 15.5l-1.5 3M12 15.5v4M16 15.5l1.5 3"/></symbol>
+  <symbol id="i-cable" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8.3" r="2.2"/><circle cx="8.6" cy="14.1" r="2.2"/><circle cx="15.4" cy="14.1" r="2.2"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5 4.5 13.5H11l-1 8 8.5-11H12z"/></symbol>
+  <symbol id="i-skylight" viewBox="0 0 24 24"><path d="M2 19.5h20M5.5 19.5V16h13v3.5M5.5 16c1.2-5.6 11.8-5.6 13 0M12 3v2.5M5.8 5.6l1.6 1.6M18.2 5.6l-1.6 1.6"/></symbol>
+  <symbol id="i-hatch" viewBox="0 0 24 24"><path d="M2 19.5h20M5 19.5V16h10v3.5M5 16 2.5 9.5"/><path d="M9.5 13.5c-1.2-1.5 1.2-2.6 0-4.5s1.2-3 0-4.5M13.5 13.5c-1.2-1.5 1.2-2.6 0-4.5"/></symbol>
+  <symbol id="i-roof" viewBox="0 0 24 24"><path d="M2 6.5h20M2 10h20M2 14.5h2l1.5 3h3l1.5-3h3l1.5 3h3l1.5-3h2"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12.2V3.5h8.7l9.3 9.3-8.7 8.7z"/><circle cx="7.5" cy="7.5" r="1.4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.8l7.5 2.8v6c0 4.6-3.2 8.2-7.5 9.6-4.3-1.4-7.5-5-7.5-9.6v-6z"/><path d="m8.6 12 2.4 2.4 4.4-4.6"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2.8h8.5l4 4v14.4H6z"/><path d="M14.5 2.8v4h4M9 12h6.5M9 15.5h6.5"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2.5 5.5H14V16H2.5zM14 9h4.3l3.2 3.6V16H14"/><circle cx="6.5" cy="17.8" r="1.9"/><circle cx="17.3" cy="17.8" r="1.9"/></symbol>
+  <symbol id="i-helmet" viewBox="0 0 24 24"><path d="M3 17.5h18M4.8 17.5a7.2 7.2 0 0 1 14.4 0M10 10.8V7.5h4v3.3"/></symbol>
+  <symbol id="i-contract" viewBox="0 0 24 24"><path d="M8 3.5h8v3H8zM6 5H4.5v15.5h15V5H18"/><path d="m8.5 13 2.5 2.5 4.5-4.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.5 3.5h3l1.5 4.5-2 1.5a11 11 0 0 0 6 6l1.5-2 4.5 1.5v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 3.5 5.5a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-telegram" viewBox="0 0 24 24"><path d="M21 4 2.5 11.2l6.3 2.3L18 7.2l-7 7.6 6.3 5.2z"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M4 20.5l1.3-4.3a8.6 8.6 0 1 1 3.1 3z"/><path d="M9 8.5c0 3.3 3.2 6.5 6.5 6.5l1-1.6-2-1-1 1a5 5 0 0 1-2.9-2.9l1-1-1-2z"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">Перейти к содержанию</a>
+
+<header class="header" data-header>
+  <div class="container header__inner">
+    <a class="logo" href="#top" aria-label="ЭнергоМонтаж — на главную">
+      <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="14.5" fill="#132130" stroke="rgba(230,236,241,.35)"/>
+        <circle cx="16" cy="7.5" r="4" fill="#7A4B2E"/>
+        <circle cx="24.08" cy="13.37" r="4" fill="#1A1A1A" stroke="rgba(230,236,241,.45)" stroke-width=".8"/>
+        <circle cx="21" cy="22.88" r="4" fill="#8F979D"/>
+        <circle cx="11" cy="22.88" r="4" fill="#2F6BD1"/>
+        <circle cx="7.92" cy="13.37" r="4" fill="#E3C02A" stroke="#2F9A4C" stroke-width="1.6"/>
+        <circle cx="16" cy="16" r="2.2" fill="#E8904E"/>
+      </svg>
+      <span class="logo__text">
+        <span class="logo__name">ЭнергоМонтаж</span>
+        <span class="logo__tag">поставка · монтаж</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="site-nav" aria-label="Основное меню">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#supply">Поставка</a></li>
+        <li><a class="nav__link" href="#install">Монтаж</a></li>
+        <li><a class="nav__link" href="#dealer">Дилерство</a></li>
+        <li><a class="nav__link" href="#process">Как работаем</a></li>
+        <li><a class="nav__link" href="#request">Контакты</a></li>
+      </ul>
+      <div class="nav__mobile-extra">
+        <a class="nav__phone" href="tel:+70000000000">+7 (000) 000-00-00</a>
+        <a class="btn btn--primary" href="#request">Оставить заявку</a>
+      </div>
+    </nav>
+
+    <div class="header__actions">
+      <a class="header__phone" href="tel:+70000000000">
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+        <span>+7 (000) 000-00-00</span>
+      </a>
+      <a class="btn btn--primary btn--sm header__cta" href="#request">Оставить заявку</a>
+      <button class="burger" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <p class="eyebrow eyebrow--light">Официальный дилер · Поставка · Монтаж</p>
+        <h1 class="hero__title">Поставка и монтаж электро&shy;оборудования, освещения и&nbsp;кровли <span>под&nbsp;ключ</span></h1>
+        <p class="hero__lead">Комплектуем объекты электро- и энергооборудованием, светодиодной и кабельной продукцией по дилерским ценам. Своими бригадами монтируем сети, зенитные фонари, люки дымоудаления и кровлю.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="#request">
+            Получить расчёт
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="btn btn--ghost btn--lg" href="#services">Направления работ</a>
+        </div>
+        <!-- Цифры — замените на реальные показатели компании -->
+        <dl class="stats">
+          <div class="stats__item"><dt>10<span>+</span></dt><dd>лет на рынке</dd></div>
+          <div class="stats__item"><dt>300<span>+</span></dt><dd>сданных объектов</dd></div>
+          <div class="stats__item"><dt>15<span>+</span></dt><dd>брендов-партнёров</dd></div>
+        </dl>
+      </div>
+
+      <figure class="hero__figure">
+        <svg class="cable" viewBox="0 0 760 560" role="img" aria-labelledby="cable-title">
+          <title id="cable-title">Разрез силового кабеля ВВГнг(А)-LS 5×16 с пятью медными жилами</title>
+          <defs>
+            <radialGradient id="cu" cx=".38" cy=".32" r=".75">
+              <stop offset="0" stop-color="#FFD9B5"/>
+              <stop offset=".35" stop-color="#EE9A5A"/>
+              <stop offset=".75" stop-color="#A9531F"/>
+              <stop offset="1" stop-color="#6E3312"/>
+            </radialGradient>
+            <radialGradient id="sheath" cx=".4" cy=".35" r=".8">
+              <stop offset="0" stop-color="#2C3845"/>
+              <stop offset="1" stop-color="#111920"/>
+            </radialGradient>
+            <radialGradient id="shine" cx=".3" cy=".25" r=".7">
+              <stop offset="0" stop-color="#fff" stop-opacity=".28"/>
+              <stop offset=".6" stop-color="#fff" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+              <stop offset="0" stop-color="#E8904E" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#E8904E" stop-opacity="0"/>
+            </radialGradient>
+            <pattern id="pe" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
+              <rect width="18" height="18" fill="#E3C02A"/>
+              <rect width="7" height="18" fill="#2F9A4C"/>
+            </pattern>
+            <g id="core">
+              <circle r="44.5" fill="#4A2310"/>
+              <circle r="14.4" fill="url(#cu)"/>
+              <circle cx="29" r="14.4" fill="url(#cu)"/>
+              <circle cx="14.5" cy="25.1" r="14.4" fill="url(#cu)"/>
+              <circle cx="-14.5" cy="25.1" r="14.4" fill="url(#cu)"/>
+              <circle cx="-29" r="14.4" fill="url(#cu)"/>
+              <circle cx="-14.5" cy="-25.1" r="14.4" fill="url(#cu)"/>
+              <circle cx="14.5" cy="-25.1" r="14.4" fill="url(#cu)"/>
+            </g>
+          </defs>
+
+          <circle class="cable__glow" cx="380" cy="280" r="270" fill="url(#glow)"/>
+
+          <!-- осевые линии (штрихпунктир, как на чертеже) -->
+          <g class="cable__axes" fill="none" stroke="rgba(230,236,241,.16)" stroke-width="1" stroke-dasharray="18 5 3 5">
+            <path d="M140 280H620M380 40V520"/>
+          </g>
+          <circle cx="380" cy="280" r="232" fill="none" stroke="rgba(230,236,241,.12)" stroke-dasharray="2 7"/>
+
+          <!-- оболочка и поясная изоляция -->
+          <circle cx="380" cy="280" r="200" fill="url(#sheath)" stroke="rgba(230,236,241,.22)" stroke-width="1.5"/>
+          <circle cx="380" cy="280" r="181" fill="#2A3643" stroke="rgba(0,0,0,.35)" stroke-width="2"/>
+          <circle cx="380" cy="280" r="22" fill="#34414F"/>
+
+          <!-- жилы: L1 коричневая, L2 чёрная, L3 серая, N синяя, PE жёлто-зелёная -->
+          <g stroke="rgba(0,0,0,.4)" stroke-width="1.5">
+            <circle cx="380" cy="172" r="60" fill="#7A4B2E"/>
+            <circle cx="482.7" cy="246.6" r="60" fill="#121212" stroke="rgba(230,236,241,.28)"/>
+            <circle cx="443.5" cy="367.4" r="60" fill="#8F979D"/>
+            <circle cx="316.5" cy="367.4" r="60" fill="#2F6BD1"/>
+            <circle cx="277.3" cy="246.6" r="60" fill="url(#pe)"/>
+          </g>
+          <g fill="url(#shine)">
+            <circle cx="380" cy="172" r="60"/>
+            <circle cx="482.7" cy="246.6" r="60"/>
+            <circle cx="443.5" cy="367.4" r="60"/>
+            <circle cx="316.5" cy="367.4" r="60"/>
+            <circle cx="277.3" cy="246.6" r="60"/>
+          </g>
+          <use href="#core" x="380" y="172"/>
+          <use href="#core" x="482.7" y="246.6"/>
+          <use href="#core" x="443.5" y="367.4"/>
+          <use href="#core" x="316.5" y="367.4"/>
+          <use href="#core" x="277.3" y="246.6"/>
+
+          <!-- выноски -->
+          <g class="cable__callouts">
+            <g fill="none" stroke="rgba(230,236,241,.5)" stroke-width="1.2">
+              <path d="M529 155 600 96H748"/>
+              <path d="M500 242 600 262H748"/>
+              <path d="M474 398 600 440H748"/>
+              <path d="M262 232 160 180H12"/>
+              <path d="M292 394 160 440H12"/>
+            </g>
+            <g fill="#E8904E">
+              <circle cx="529" cy="155" r="4"/>
+              <circle cx="500" cy="242" r="4"/>
+              <circle cx="474" cy="398" r="4"/>
+              <circle cx="262" cy="232" r="4"/>
+              <circle cx="292" cy="394" r="4"/>
+            </g>
+            <g class="cable__label">
+              <text x="604" y="87">ОБОЛОЧКА</text>
+              <text x="604" y="119" class="cable__sub">ПВХ нг(А)-LS</text>
+              <text x="604" y="253">ЖИЛА · Cu</text>
+              <text x="604" y="285" class="cable__sub">медь, класс 2</text>
+              <text x="604" y="431">L1 · L2 · L3</text>
+              <text x="604" y="463" class="cable__sub">фазные жилы</text>
+              <text x="156" y="171" text-anchor="end">PE</text>
+              <text x="156" y="203" text-anchor="end" class="cable__sub">защитная жила</text>
+              <text x="156" y="431" text-anchor="end">N</text>
+              <text x="156" y="463" text-anchor="end" class="cable__sub">нулевая рабочая</text>
+            </g>
+          </g>
+          <text class="cable__caption" x="380" y="548" text-anchor="middle">ВВГнг(А)-LS 5×16ок(N,PE)-0,66 · разрез А–А</text>
+        </svg>
+        <figcaption class="hero__legend">
+          <span><i style="--c:#7A4B2E"></i>L1</span>
+          <span><i style="--c:#121212"></i>L2</span>
+          <span><i style="--c:#8F979D"></i>L3</span>
+          <span><i style="--c:#2F6BD1"></i>N</span>
+          <span><i class="pe"></i>PE</span>
+          <span class="hero__legend-mark">ВВГнг(А)-LS 5×16 · 0,66 кВ</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="wires" aria-hidden="true"></div>
+
+  <!-- ============ НАПРАВЛЕНИЯ ============ -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Направления</p>
+        <h2 class="section-title">Электрика, свет и&nbsp;кровля объекта у&nbsp;одного подрядчика</h2>
+        <p class="section-lead">Можно заказать только поставку, только монтаж или весь комплекс работ по одному договору.</p>
+      </div>
+
+      <!-- Поставка -->
+      <div class="group" id="supply">
+        <div class="group__head">
+          <h3 class="group__title">Поставка</h3>
+          <p class="group__text">Оборудование и материалы со склада и под заказ по ценам официального дилера. Доставляем на объект по графику монтажа.</p>
+          <ul class="group__facts">
+            <li>Подбор по проекту или спецификации</li>
+            <li>Сертификаты и паспорта</li>
+            <li>Отсрочка для постоянных клиентов</li>
+          </ul>
+        </div>
+
+        <div class="tiles">
+          <article class="tile">
+            <div class="tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-panel"/></svg></div>
+            <h4 class="tile__title">Электрооборудование</h4>
+            <ul class="tile__list">
+              <li>Вводно-распределительные щиты ВРУ, ЩР, ЩО</li>
+              <li>Автоматические выключатели, УЗО, дифавтоматы</li>
+              <li>Контакторы, реле, приборы учёта</li>
+              <li>Щитовые корпуса и шкафы</li>
+            </ul>
+            <div class="tile__foot">
+              <span class="tile__spec">0,4 кВ · IP31–IP65</span>
+              <a class="tile__link" href="#request" data-service="Электрооборудование">Запросить цену</a>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-transformer"/></svg></div>
+            <h4 class="tile__title">Энергооборудование</h4>
+            <ul class="tile__list">
+              <li>Силовые трансформаторы и КТП</li>
+              <li>Дизельные генераторные установки</li>
+              <li>Стабилизаторы напряжения и ИБП</li>
+              <li>Установки компенсации реактивной мощности</li>
+            </ul>
+            <div class="tile__foot">
+              <span class="tile__spec">6–10/0,4 кВ · до 2500 кВА</span>
+              <a class="tile__link" href="#request" data-service="Энергооборудование">Запросить цену</a>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-led"/></svg></div>
+            <h4 class="tile__title">Светодиодная продукция</h4>
+            <ul class="tile__list">
+              <li>Промышленные и складские светильники</li>
+              <li>Уличные консольные светильники и прожекторы</li>
+              <li>Офисные панели и линейные светильники</li>
+              <li>Аварийное и эвакуационное освещение</li>
+            </ul>
+            <div class="tile__foot">
+              <span class="tile__spec">IP65–IP67 · от 130 лм/Вт</span>
+              <a class="tile__link" href="#request" data-service="Светодиодное освещение">Запросить цену</a>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-cable"/></svg></div>
+            <h4 class="tile__title">Кабельная продукция</h4>
+            <ul class="tile__list">
+              <li>Силовой кабель ВВГнг(А)-LS, АВБбШв, ППГнг</li>
+              <li>Гибкий кабель КГ, провод ПуГВ, СИП</li>
+              <li>Контрольный и слаботочный кабель</li>
+              <li>Кабельные лотки и крепёж</li>
+            </ul>
+            <div class="tile__foot">
+              <span class="tile__spec">сечения 1,5–240 мм²</span>
+              <a class="tile__link" href="#request" data-service="Кабельная продукция">Запросить цену</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Монтаж -->
+      <div class="group" id="install">
+        <div class="group__head">
+          <h3 class="group__title">Монтаж</h3>
+          <p class="group__text">Работают штатные электромонтажники и кровельщики с допусками. Сдаём объект с исполнительной документацией.</p>
+          <a class="group__more" href="#object">
+            Все работы на разрезе объекта
+            <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>
+          </a>
+        </div>
+
+        <div class="tiles">
+          <article class="tile">
+            <div class="tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg></div>
+            <h4 class="tile__title">Электромонтажные работы</h4>
+            <ul class="tile__list">
+              <li>Внутренние и наружные сети электроснабжения</li>
+              <li>Сборка и подключение щитов, прокладка трасс</li>
+              <li>Монтаж внутреннего и наружного освещения</li>
+              <li>Заземление, молниезащита, пусконаладка</li>
+            </ul>
+            <div class="tile__foot">
+              <span class="tile__spec">поз. 4–8 на разрезе</span>
+              <a class="tile__link" href="#request" data-service="Электромонтаж">Рассчитать</a>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-skylight"/></svg></div>
+            <h4 class="tile__title">Зенитные фонари</h4>
+            <ul class="tile__list">
+              <li>Точечные и ленточные фонари</li>
+              <li>Монолитный и сотовый поликарбонат</li>
+              <li>Монтаж опорных стаканов в новую и готовую кровлю</li>
+              <li>Герметичное примыкание кровельного ковра</li>
+            </ul>
+            <div class="tile__foot">
+              <span class="tile__spec">поз. 1 на разрезе</span>
+              <a class="tile__link" href="#request" data-service="Зенитные фонари">Рассчитать</a>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-hatch"/></svg></div>
+            <h4 class="tile__title">Люки дымоудаления</h4>
+            <ul class="tile__list">
+              <li>Люки с электро- и пневмоприводом</li>
+              <li>Подключение к системе противопожарной защиты</li>
+              <li>Люки с функцией проветривания и выхода на кровлю</li>
+              <li>Сертифицированные изделия</li>
+            </ul>
+            <div class="tile__foot">
+              <span class="tile__spec">СП 7.13130 · поз. 2</span>
+              <a class="tile__link" href="#request" data-service="Люки дымоудаления">Рассчитать</a>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-roof"/></svg></div>
+            <h4 class="tile__title">Монтаж кровли</h4>
+            <ul class="tile__list">
+              <li>Мембранная кровля ПВХ и ТПО</li>
+              <li>Наплавляемая кровля</li>
+              <li>Профнастил и сэндвич-панели</li>
+              <li>Утепление и ремонт существующей кровли</li>
+            </ul>
+            <div class="tile__foot">
+              <span class="tile__spec">поз. 3 на разрезе</span>
+              <a class="tile__link" href="#request" data-service="Кровля">Рассчитать</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ОБЪЕКТ В РАЗРЕЗЕ ============ -->
+  <section class="section object" id="object">
+    <div class="container">
+      <div class="object__head">
+        <div>
+          <p class="eyebrow eyebrow--light">Объект в разрезе</p>
+          <h2 class="section-title">От трансформаторной подстанции до&nbsp;кровли</h2>
+        </div>
+        <p class="object__lead">Всё, что отмечено на этом разрезе, мы поставляем и монтируем сами. Вам не нужно согласовывать работу нескольких подрядчиков на одном объекте.</p>
+      </div>
+
+      <div class="drawing" tabindex="0" aria-label="Схема здания в разрезе. На узких экранах прокручивается по горизонтали.">
+        <svg class="drawing__svg" viewBox="0 0 1280 620" role="img" aria-labelledby="section-title section-desc">
+          <title id="section-title">Разрез производственно-складского корпуса</title>
+          <desc id="section-desc">Зенитный фонарь, люк дымоудаления, кровельный пирог, светодиодные светильники, кабельные лотки, электрощит, трансформаторная подстанция и наружное освещение.</desc>
+          <defs>
+            <pattern id="ground" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <path d="M0 0V12" stroke="rgba(201,214,226,.16)" stroke-width="1.4"/>
+            </pattern>
+            <pattern id="wool" width="14" height="37" patternUnits="userSpaceOnUse">
+              <path d="M0 2 7 35 14 2" fill="none" stroke="rgba(227,192,42,.55)" stroke-width="1.2"/>
+            </pattern>
+            <pattern id="prof" width="24" height="16" patternUnits="userSpaceOnUse">
+              <path d="M0 15 4 1h8l4 14h8" fill="none" stroke="#C9D6E2" stroke-width="1.3"/>
+            </pattern>
+            <linearGradient id="daylight" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#CFE6FF" stop-opacity=".32"/>
+              <stop offset="1" stop-color="#CFE6FF" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="lamp" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFE3BD" stop-opacity=".34"/>
+              <stop offset="1" stop-color="#FFE3BD" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#8EC5FF" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#8EC5FF" stop-opacity=".12"/>
+            </linearGradient>
+            <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 1 8 5 0 9z" fill="#AEBBC7"/>
+            </marker>
+            <marker id="arr-sun" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 1 8 5 0 9z" fill="#F2C46B"/>
+            </marker>
+          </defs>
+
+          <!-- грунт и плита пола -->
+          <rect x="0" y="570" width="1280" height="50" fill="url(#ground)"/>
+          <path d="M0 570H1280" stroke="#C9D6E2" stroke-width="1.5"/>
+          <rect x="120" y="570" width="1040" height="10" fill="#22313F" stroke="#C9D6E2" stroke-width="1"/>
+
+          <!-- световые потоки (рисуются под конструкциями) -->
+          <polygon points="350,241 490,241 610,570 450,570" fill="url(#daylight)"/>
+          <polygon points="196,339 244,339 350,570 90,570" fill="url(#lamp)"/>
+          <polygon points="616,339 664,339 770,570 510,570" fill="url(#lamp)"/>
+          <polygon points="996,339 1044,339 1135,570 890,570" fill="url(#lamp)"/>
+          <polygon points="88,322 114,322 118,570 20,570" fill="url(#lamp)"/>
+
+          <!-- солнечные лучи над фонарём -->
+          <g stroke="#F2C46B" stroke-width="1.4" stroke-dasharray="6 6" marker-end="url(#arr-sun)" opacity=".85">
+            <path d="M318 8 354 100"/>
+            <path d="M366 4 398 86"/>
+            <path d="M414 0 440 70"/>
+          </g>
+
+          <!-- стены с парапетами -->
+          <rect x="120" y="150" width="20" height="420" fill="#1B2733" stroke="#C9D6E2" stroke-width="1.2"/>
+          <rect x="1140" y="150" width="20" height="420" fill="#1B2733" stroke="#C9D6E2" stroke-width="1.2"/>
+          <rect x="116" y="145" width="28" height="6" fill="#AEBBC7"/>
+          <rect x="1136" y="145" width="28" height="6" fill="#AEBBC7"/>
+
+          <!-- несущая балка -->
+          <rect x="140" y="241" width="1000" height="14" fill="#22313F" stroke="rgba(201,214,226,.55)" stroke-width="1"/>
+
+          <!-- кровельный пирог: мембрана / утеплитель / пароизоляция / профлист -->
+          <g>
+            <rect x="140" y="186" width="200" height="37" fill="#2B2A1F"/>
+            <rect x="500" y="186" width="260" height="37" fill="#2B2A1F"/>
+            <rect x="880" y="186" width="260" height="37" fill="#2B2A1F"/>
+            <rect x="140" y="186" width="200" height="37" fill="url(#wool)"/>
+            <rect x="500" y="186" width="260" height="37" fill="url(#wool)"/>
+            <rect x="880" y="186" width="260" height="37" fill="url(#wool)"/>
+            <g fill="#8EC5FF" opacity=".7">
+              <rect x="140" y="223" width="200" height="2"/>
+              <rect x="500" y="223" width="260" height="2"/>
+              <rect x="880" y="223" width="260" height="2"/>
+            </g>
+            <rect x="140" y="225" width="200" height="16" fill="url(#prof)"/>
+            <rect x="500" y="225" width="260" height="16" fill="url(#prof)"/>
+            <rect x="880" y="225" width="260" height="16" fill="url(#prof)"/>
+            <g fill="#AEBBC7">
+              <rect x="140" y="180" width="200" height="6"/>
+              <rect x="500" y="180" width="260" height="6"/>
+              <rect x="880" y="180" width="260" height="6"/>
+              <rect x="140" y="158" width="4" height="28"/>
+              <rect x="1136" y="158" width="4" height="28"/>
+            </g>
+          </g>
+
+          <!-- зенитный фонарь: стакан, рама, купол -->
+          <rect x="340" y="140" width="10" height="101" fill="#1B2733" stroke="#C9D6E2" stroke-width="1"/>
+          <rect x="490" y="140" width="10" height="101" fill="#1B2733" stroke="#C9D6E2" stroke-width="1"/>
+          <rect x="336" y="144" width="4" height="42" fill="#AEBBC7"/>
+          <rect x="500" y="144" width="4" height="42" fill="#AEBBC7"/>
+          <rect x="332" y="134" width="176" height="8" fill="#AEBBC7"/>
+          <path d="M336 134Q420 34 504 134Z" fill="url(#glass)" stroke="#8EC5FF" stroke-width="1.6"/>
+          <path d="M350 134Q420 54 490 134" fill="none" stroke="#8EC5FF" stroke-opacity=".6" stroke-width="1.2"/>
+
+          <!-- люк дымоудаления: стакан, рама, открытая створка, привод -->
+          <rect x="760" y="145" width="10" height="96" fill="#1B2733" stroke="#C9D6E2" stroke-width="1"/>
+          <rect x="870" y="145" width="10" height="96" fill="#1B2733" stroke="#C9D6E2" stroke-width="1"/>
+          <rect x="756" y="150" width="4" height="36" fill="#AEBBC7"/>
+          <rect x="880" y="150" width="4" height="36" fill="#AEBBC7"/>
+          <rect x="752" y="140" width="132" height="6" fill="#AEBBC7"/>
+          <g transform="rotate(-100 758 143)">
+            <rect x="758" y="129" width="124" height="15" rx="1.5" fill="#AEBBC7" stroke="#E6ECF1" stroke-width="1"/>
+            <rect x="764" y="133" width="112" height="7" fill="#1B2733"/>
+          </g>
+          <rect x="742" y="147" width="14" height="10" fill="#E8904E"/>
+
+          <!-- дым -->
+          <g class="smoke" fill="none" stroke-linecap="round">
+            <g stroke="#9AA7B3" stroke-opacity=".16" stroke-width="16">
+              <path d="M790 230C780 190 810 170 800 135S820 80 845 40 880 8 900 2"/>
+              <path d="M820 235C812 195 842 170 832 135S858 85 885 50 925 20 950 12"/>
+              <path d="M850 230C845 195 870 175 862 140S895 95 925 70 965 45 995 40"/>
+            </g>
+            <g class="smoke__flow" stroke="#AEBBC7" stroke-width="1.6" stroke-dasharray="7 9">
+              <path d="M790 230C780 190 810 170 800 135S820 80 845 40 880 8 900 2" marker-end="url(#arr)"/>
+              <path d="M820 235C812 195 842 170 832 135S858 85 885 50 925 20 950 12" marker-end="url(#arr)"/>
+              <path d="M850 230C845 195 870 175 862 140S895 95 925 70 965 45 995 40" marker-end="url(#arr)"/>
+            </g>
+          </g>
+
+          <!-- кабельный лоток с подвесами -->
+          <g stroke="rgba(201,214,226,.6)" stroke-width="1">
+            <path d="M190 255V280M420 255V280M580 255V280M820 255V280M1080 255V280"/>
+          </g>
+          <rect x="150" y="280" width="980" height="11" fill="none" stroke="#E8904E" stroke-width="1.6"/>
+          <path d="M152 284H1128" stroke="#8F979D" stroke-width="1.6"/>
+          <path d="M152 287.5H1128" stroke="#E8904E" stroke-opacity=".7" stroke-width="1.6"/>
+
+          <!-- светодиодные светильники -->
+          <g stroke="#C9D6E2" stroke-width="1.2">
+            <path d="M220 255V318M640 255V318M1020 255V318"/>
+          </g>
+          <g fill="#C9D6E2">
+            <path d="M194 336 206 318H234L246 336Z"/>
+            <path d="M614 336 626 318H654L666 336Z"/>
+            <path d="M994 336 1006 318H1034L1046 336Z"/>
+          </g>
+          <g fill="#FFF1D6">
+            <rect x="194" y="336" width="52" height="3"/>
+            <rect x="614" y="336" width="52" height="3"/>
+            <rect x="994" y="336" width="52" height="3"/>
+          </g>
+
+          <!-- электрощит и спуск кабеля -->
+          <path d="M196 291V400" stroke="#E8904E" stroke-width="2"/>
+          <rect x="150" y="400" width="64" height="110" fill="#1B2733" stroke="#C9D6E2" stroke-width="1.2"/>
+          <path d="M182 404V506" stroke="rgba(201,214,226,.5)"/>
+          <rect x="172" y="450" width="3" height="12" fill="#C9D6E2"/>
+          <rect x="189" y="450" width="3" height="12" fill="#C9D6E2"/>
+          <path d="M196 414 204 428H188Z" fill="#E3C02A"/>
+
+          <!-- КТП и подземная кабельная линия -->
+          <path d="M1222 570V602H182V510" fill="none" stroke="#E8904E" stroke-width="2" stroke-dasharray="9 6"/>
+          <path d="M1176 470 1186 458H1258L1268 470Z" fill="#AEBBC7"/>
+          <rect x="1180" y="470" width="84" height="100" fill="#1B2733" stroke="#C9D6E2" stroke-width="1.2"/>
+          <path d="M1222 476V566" stroke="rgba(201,214,226,.5)"/>
+          <g stroke="rgba(201,214,226,.45)"><path d="M1236 530H1254M1236 537H1254M1236 544H1254M1236 551H1254"/></g>
+          <path d="M1201 480 1212 499H1190Z" fill="#E3C02A"/>
+          <path d="M1202 484 1198 492H1203L1199 498" fill="none" stroke="#0D1620" stroke-width="1.3"/>
+
+          <!-- наружное освещение -->
+          <path d="M60 570V330Q60 318 72 318H90" fill="none" stroke="#C9D6E2" stroke-width="3"/>
+          <rect x="86" y="314" width="30" height="8" rx="2" fill="#C9D6E2"/>
+
+          <!-- позиции (выноски с номерами) -->
+          <g class="pos">
+            <g stroke="#E8904E" stroke-width="1.2" fill="none">
+              <path d="M548 76 490 110"/>
+              <path d="M944 130 886 146"/>
+              <path d="M1070 126V200"/>
+              <path d="M1076 356 1046 338"/>
+              <path d="M300 314V293"/>
+              <path d="M254 455H216"/>
+              <path d="M1222 404V458"/>
+              <path d="M72 290 94 312"/>
+            </g>
+            <g fill="#E8904E">
+              <circle cx="490" cy="110" r="3.5"/>
+              <circle cx="886" cy="146" r="3.5"/>
+              <circle cx="1070" cy="200" r="3.5"/>
+              <circle cx="1046" cy="338" r="3.5"/>
+              <circle cx="300" cy="293" r="3.5"/>
+              <circle cx="216" cy="455" r="3.5"/>
+              <circle cx="1222" cy="458" r="3.5"/>
+              <circle cx="94" cy="312" r="3.5"/>
+            </g>
+            <g class="pos__badge">
+              <circle cx="560" cy="68" r="16"/>
+              <circle cx="960" cy="125" r="16"/>
+              <circle cx="1070" cy="110" r="16"/>
+              <circle cx="1090" cy="365" r="16"/>
+              <circle cx="300" cy="330" r="16"/>
+              <circle cx="270" cy="455" r="16"/>
+              <circle cx="1222" cy="388" r="16"/>
+              <circle cx="60" cy="278" r="16"/>
+            </g>
+            <g class="pos__num" text-anchor="middle">
+              <text x="560" y="73">1</text>
+              <text x="960" y="130">2</text>
+              <text x="1070" y="115">3</text>
+              <text x="1090" y="370">4</text>
+              <text x="300" y="335">5</text>
+              <text x="270" y="460">6</text>
+              <text x="1222" y="393">7</text>
+              <text x="60" y="283">8</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="drawing__meta">
+        <span>Разрез 1–1 · производственно-складской корпус</span>
+        <span>Схема условная<span class="drawing__hint"> · листайте вбок</span></span>
+      </div>
+
+      <ol class="legend">
+        <li class="legend__item"><span class="legend__num">1</span><div><b>Зенитный фонарь</b><span>Дневной свет в цех и на склад</span></div></li>
+        <li class="legend__item"><span class="legend__num">2</span><div><b>Люк дымоудаления</b><span>Удаление дыма при пожаре, проветривание</span></div></li>
+        <li class="legend__item"><span class="legend__num">3</span><div><b>Кровельный пирог</b><span>Мембрана, утеплитель, пароизоляция, профлист</span></div></li>
+        <li class="legend__item"><span class="legend__num">4</span><div><b>LED-светильники</b><span>Освещение пролётов и стеллажных зон</span></div></li>
+        <li class="legend__item"><span class="legend__num">5</span><div><b>Кабельные трассы</b><span>Лотки, кабель, крепёж по всему зданию</span></div></li>
+        <li class="legend__item"><span class="legend__num">6</span><div><b>Электрощит</b><span>ВРУ и распределительные щиты</span></div></li>
+        <li class="legend__item"><span class="legend__num">7</span><div><b>КТП</b><span>Питание объекта от сети 6–10 кВ</span></div></li>
+        <li class="legend__item"><span class="legend__num">8</span><div><b>Наружное освещение</b><span>Консольные светильники и прожекторы</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ ДИЛЕРСТВО ============ -->
+  <section class="section dealer" id="dealer">
+    <div class="container dealer__grid">
+      <div class="dealer__content">
+        <p class="eyebrow">Дилерство</p>
+        <h2 class="section-title">Официальный дилер производителей</h2>
+        <p class="section-lead">Закупаем напрямую у заводов. Вы получаете оборудование по дилерским ценам, с гарантией производителя и полным комплектом документов.</p>
+        <ul class="perks">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg><div><b>Цены без посредников</b><span>Дилерские скидки на весь ассортимент брендов-партнёров</span></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><div><b>Гарантия завода</b><span>Гарантийные случаи решаем напрямую с производителем</span></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Документы на каждую позицию</b><span>Сертификаты соответствия, паспорта, декларации</span></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg><div><b>Склад и доставка</b><span>Ходовые позиции в наличии, остальное под заказ</span></div></li>
+        </ul>
+      </div>
+
+      <!-- Замените «логотип» на <img src="assets/img/partners/..." alt="Название бренда"> -->
+      <ul class="partners" aria-label="Производители, дилером которых мы являемся">
+        <li class="partner"><span class="partner__logo">логотип</span><span class="partner__cat">Щитовое оборудование</span></li>
+        <li class="partner"><span class="partner__logo">логотип</span><span class="partner__cat">Автоматика и защита</span></li>
+        <li class="partner"><span class="partner__logo">логотип</span><span class="partner__cat">Трансформаторы и КТП</span></li>
+        <li class="partner"><span class="partner__logo">логотип</span><span class="partner__cat">Светодиодные светильники</span></li>
+        <li class="partner"><span class="partner__logo">логотип</span><span class="partner__cat">Силовой кабель</span></li>
+        <li class="partner"><span class="partner__logo">логотип</span><span class="partner__cat">Кабеленесущие системы</span></li>
+        <li class="partner"><span class="partner__logo">логотип</span><span class="partner__cat">Зенитные фонари и люки</span></li>
+        <li class="partner"><span class="partner__logo">логотип</span><span class="partner__cat">Кровельные материалы</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="wires" aria-hidden="true"></div>
+
+  <!-- ============ КАК РАБОТАЕМ ============ -->
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Как работаем</p>
+        <h2 class="section-title">Пять шагов от&nbsp;заявки до&nbsp;сдачи объекта</h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step__num">01</span>
+          <h3 class="step__title">Заявка</h3>
+          <p>Оставляете заявку или присылаете спецификацию, проект, план помещения.</p>
+        </li>
+        <li class="step">
+          <span class="step__num">02</span>
+          <h3 class="step__title">Выезд и замеры</h3>
+          <p>Инженер оценивает объём работ, состояние кровли и существующих сетей.</p>
+        </li>
+        <li class="step">
+          <span class="step__num">03</span>
+          <h3 class="step__title">Смета и договор</h3>
+          <p>Готовим предложение с разбивкой по оборудованию и работам, фиксируем цену и сроки.</p>
+        </li>
+        <li class="step">
+          <span class="step__num">04</span>
+          <h3 class="step__title">Поставка</h3>
+          <p>Привозим оборудование и материалы на объект по графику монтажа.</p>
+        </li>
+        <li class="step">
+          <span class="step__num">05</span>
+          <h3 class="step__title">Монтаж и сдача</h3>
+          <p>Выполняем работы, проводим испытания, передаём исполнительную документацию.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ ПРЕИМУЩЕСТВА ============ -->
+  <section class="section why" id="why">
+    <div class="container">
+      <div class="section-head section-head--row">
+        <div>
+          <p class="eyebrow">Почему удобно с нами</p>
+          <h2 class="section-title">Один договор, одна ответственность</h2>
+        </div>
+        <p class="section-lead">Поставщик и монтажник в одном лице. Если что-то пошло не так, не нужно выяснять, кто виноват: отвечаем за результат целиком.</p>
+      </div>
+      <div class="why__grid">
+        <div class="why__item">
+          <svg class="icon" aria-hidden="true"><use href="#i-contract"/></svg>
+          <h3>Поставка и монтаж в одном договоре</h3>
+          <p>Оборудование подбираем под монтаж, поэтому на объекте не бывает несовместимых позиций и пересортицы.</p>
+        </div>
+        <div class="why__item">
+          <svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg>
+          <h3>Дилерские цены</h3>
+          <p>Работаем с заводами напрямую и не закладываем в смету наценку перепродавцов.</p>
+        </div>
+        <div class="why__item">
+          <svg class="icon" aria-hidden="true"><use href="#i-helmet"/></svg>
+          <h3>Свои бригады с допусками</h3>
+          <p>Электромонтажники с группами по электробезопасности, кровельщики с допуском к работам на высоте.</p>
+        </div>
+        <div class="why__item">
+          <svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg>
+          <h3>Полный пакет документов</h3>
+          <p>Сертификаты и паспорта на оборудование, акты скрытых работ, исполнительные схемы.</p>
+        </div>
+        <div class="why__item">
+          <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
+          <h3>Сроки в договоре</h3>
+          <p>График поставки и монтажа согласуем заранее и закрепляем в договоре.</p>
+        </div>
+        <div class="why__item">
+          <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>
+          <h3>Двойная гарантия</h3>
+          <p>Гарантия производителя на оборудование и наша гарантия на выполненный монтаж.</p>
+        </div>
+      </div>
+
+      <div class="sectors">
+        <p class="sectors__label">Работаем на объектах</p>
+        <ul class="sectors__list">
+          <li>Производственные цеха</li>
+          <li>Склады и логистические комплексы</li>
+          <li>Торговые центры</li>
+          <li>Спортивные объекты</li>
+          <li>Жилые комплексы</li>
+          <li>Школы и больницы</li>
+          <li>Агрокомплексы</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section faq" id="faq">
+    <div class="container faq__grid">
+      <div class="faq__head">
+        <p class="eyebrow">Вопросы</p>
+        <h2 class="section-title">Частые вопросы</h2>
+        <p class="section-lead">Не нашли ответ? Позвоните или напишите, инженер ответит по вашему объекту.</p>
+        <a class="btn btn--dark" href="#request">Задать вопрос</a>
+      </div>
+      <div class="faq__list">
+        <details class="qa" open>
+          <summary>Можно заказать только поставку, без монтажа?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p>Да. Поставляем оборудование и материалы отдельно: со склада или под заказ, с доставкой на объект. Подберём аналоги, если нужной позиции нет в наличии.</p>
+        </details>
+        <details class="qa">
+          <summary>Как рассчитать стоимость работ?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p>Пришлите проект, спецификацию или просто опишите задачу. Для поставки по спецификации готовим предложение без выезда. Для кровли, зенитных фонарей и электромонтажа инженер сначала выезжает на объект.</p>
+        </details>
+        <details class="qa">
+          <summary>Можно установить зенитные фонари в существующую кровлю?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p>Да. Вырезаем проём, при необходимости усиливаем основание, устанавливаем опорный стакан и восстанавливаем кровельный пирог с герметичными примыканиями.</p>
+        </details>
+        <details class="qa">
+          <summary>Нужен ли проект для люков дымоудаления?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p>Люки дымоудаления входят в систему противодымной вентиляции. Их количество, размеры и размещение определяются проектом по СП 7.13130. Если проекта пока нет, подскажем, с чего начать, и подберём изделия под требования.</p>
+        </details>
+        <details class="qa">
+          <summary>Какие документы мы получим?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p>На оборудование: сертификаты или декларации соответствия, паспорта, гарантийные талоны. По монтажу: акты скрытых работ, исполнительные схемы, протоколы испытаний, акты приёмки.</p>
+        </details>
+        <details class="qa">
+          <summary>Какая гарантия на работы?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p>На оборудование действует гарантия производителя. На монтаж даём собственную гарантию, срок прописываем в договоре.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ЗАЯВКА И КОНТАКТЫ ============ -->
+  <section class="section request" id="request">
+    <div class="container request__grid">
+      <div class="request__info" id="contacts">
+        <p class="eyebrow eyebrow--light">Заявка</p>
+        <h2 class="section-title">Получите расчёт стоимости</h2>
+        <p class="request__lead">Опишите задачу или отправьте спецификацию на почту. Инженер свяжется с вами, уточнит детали и подготовит коммерческое предложение.</p>
+
+        <!-- Контакты — замените на реальные -->
+        <dl class="contacts">
+          <div class="contacts__row">
+            <dt><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Телефон</dt>
+            <dd><a href="tel:+70000000000">+7 (000) 000-00-00</a></dd>
+          </div>
+          <div class="contacts__row">
+            <dt><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Почта</dt>
+            <dd><a href="mailto:info@example.ru">info@example.ru</a></dd>
+          </div>
+          <div class="contacts__row">
+            <dt><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Адрес</dt>
+            <dd>г. Город, ул. Промышленная, д. 1, офис 1</dd>
+          </div>
+          <div class="contacts__row">
+            <dt><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Режим работы</dt>
+            <dd>Пн–Пт, 9:00–18:00</dd>
+          </div>
+        </dl>
+
+        <div class="messengers">
+          <a class="messenger" href="https://t.me/username" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg>Telegram
+          </a>
+          <a class="messenger" href="https://wa.me/70000000000" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <form class="form" id="request-form" novalidate>
+          <h3 class="form__title">Заявка на расчёт</h3>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="f-name">Имя <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="100" placeholder="Как к вам обращаться">
+              <p class="field__error" id="f-name-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-phone">Телефон <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="18" placeholder="+7 (___) ___-__-__">
+              <p class="field__error" id="f-phone-error" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-company">Компания или объект</label>
+            <input id="f-company" name="company" type="text" autocomplete="organization" maxlength="150" placeholder="Необязательно">
+          </div>
+
+          <fieldset class="field chips">
+            <legend>Что нужно</legend>
+            <div class="chips__list">
+              <label class="chip"><input type="checkbox" id="s-1" name="services[]" value="Электрооборудование"><span>Электрооборудование</span></label>
+              <label class="chip"><input type="checkbox" id="s-2" name="services[]" value="Энергооборудование"><span>Энергооборудование</span></label>
+              <label class="chip"><input type="checkbox" id="s-3" name="services[]" value="Светодиодное освещение"><span>LED-освещение</span></label>
+              <label class="chip"><input type="checkbox" id="s-4" name="services[]" value="Кабельная продукция"><span>Кабель</span></label>
+              <label class="chip"><input type="checkbox" id="s-5" name="services[]" value="Электромонтаж"><span>Электромонтаж</span></label>
+              <label class="chip"><input type="checkbox" id="s-6" name="services[]" value="Зенитные фонари"><span>Зенитные фонари</span></label>
+              <label class="chip"><input type="checkbox" id="s-7" name="services[]" value="Люки дымоудаления"><span>Люки дымоудаления</span></label>
+              <label class="chip"><input type="checkbox" id="s-8" name="services[]" value="Кровля"><span>Кровля</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="f-message">Задача</label>
+            <textarea id="f-message" name="message" rows="4" maxlength="3000" placeholder="Например: склад 2400 м², нужно 12 зенитных фонарей и замена освещения"></textarea>
+          </div>
+
+          <!-- Скрытое поле-ловушка для ботов -->
+          <div class="hp" aria-hidden="true">
+            <label for="f-website">Сайт</label>
+            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field field--check">
+            <label class="check">
+              <input id="f-consent" name="consent" type="checkbox" value="1" required>
+              <span>Согласен на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span>
+            </label>
+            <p class="field__error" id="f-consent-error" aria-live="polite"></p>
+          </div>
+
+          <p class="form__status" role="alert" hidden></p>
+
+          <button class="btn btn--primary btn--lg btn--block" type="submit">
+            <span class="btn__label">Отправить заявку</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+        </form>
+
+        <div class="form-done" hidden>
+          <svg class="icon form-done__icon" aria-hidden="true"><use href="#i-check"/></svg>
+          <h3 class="form__title" tabindex="-1">Заявка отправлена</h3>
+          <p>Инженер свяжется с вами в рабочее время. Если вопрос срочный, позвоните по телефону <a href="tel:+70000000000">+7 (000) 000-00-00</a>.</p>
+          <button class="btn btn--ghost" type="button" data-form-reset>Отправить ещё одну заявку</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a class="logo" href="#top" aria-label="ЭнергоМонтаж — наверх">
+        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="14.5" fill="#132130" stroke="rgba(230,236,241,.35)"/>
+          <circle cx="16" cy="7.5" r="4" fill="#7A4B2E"/>
+          <circle cx="24.08" cy="13.37" r="4" fill="#1A1A1A" stroke="rgba(230,236,241,.45)" stroke-width=".8"/>
+          <circle cx="21" cy="22.88" r="4" fill="#8F979D"/>
+          <circle cx="11" cy="22.88" r="4" fill="#2F6BD1"/>
+          <circle cx="7.92" cy="13.37" r="4" fill="#E3C02A" stroke="#2F9A4C" stroke-width="1.6"/>
+          <circle cx="16" cy="16" r="2.2" fill="#E8904E"/>
+        </svg>
+        <span class="logo__text">
+          <span class="logo__name">ЭнергоМонтаж</span>
+          <span class="logo__tag">поставка · монтаж</span>
+        </span>
+      </a>
+      <p>Поставка и монтаж электро- и энергооборудования, светодиодной и кабельной продукции. Зенитные фонари, люки дымоудаления, кровля.</p>
+    </div>
+    <nav class="footer__col" aria-label="Поставка">
+      <h3>Поставка</h3>
+      <a href="#supply">Электрооборудование</a>
+      <a href="#supply">Энергооборудование</a>
+      <a href="#supply">Светодиодная продукция</a>
+      <a href="#supply">Кабельная продукция</a>
+    </nav>
+    <nav class="footer__col" aria-label="Монтаж">
+      <h3>Монтаж</h3>
+      <a href="#install">Электромонтаж</a>
+      <a href="#install">Зенитные фонари</a>
+      <a href="#install">Люки дымоудаления</a>
+      <a href="#install">Кровля</a>
+    </nav>
+    <div class="footer__col">
+      <h3>Контакты</h3>
+      <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+      <a href="mailto:info@example.ru">info@example.ru</a>
+      <span>г. Город, ул. Промышленная, д. 1</span>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© <span data-year>2026</span> ООО «ЭнергоМонтаж» · ИНН 0000000000 · ОГРН 0000000000000</span>
+    <a href="privacy.html">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
