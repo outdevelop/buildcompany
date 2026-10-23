@@ -11,9 +11,9 @@
   <meta property="og:description" content="От поставки до монтажа: светотехника, кабель, электрощитовое оборудование, электромонтаж, котельные, вентиляция и кровля. Казань.">
   <meta property="og:locale" content="ru_RU">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tektur:wdth,wght@75..100,400..800&family=Golos+Text:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -208,10 +208,10 @@
           <text class="cable__caption" x="380" y="548" text-anchor="middle">ВВГнг(А)-LS 5×16ок(N,PE)-0,66 · разрез А–А</text>
         </svg>
         <figcaption class="hero__legend">
-          <span><i style="--c:#7A4B2E"></i>L1</span>
-          <span><i style="--c:#121212"></i>L2</span>
-          <span><i style="--c:#8F979D"></i>L3</span>
-          <span><i style="--c:#2F6BD1"></i>N</span>
+          <span><i class="l1"></i>L1</span>
+          <span><i class="l2"></i>L2</span>
+          <span><i class="l3"></i>L3</span>
+          <span><i class="n"></i>N</span>
           <span><i class="pe"></i>PE</span>
           <span class="hero__legend-mark">ВВГнг(А)-LS 5×16 · 0,66 кВ</span>
         </figcaption>
@@ -721,17 +721,17 @@
           <p class="dealer-card__cat">Светодиодные светильники</p>
           <p class="dealer-card__doc">Официальный дилер</p>
         </article>
-        <a class="dealer-card dealer-card--cert" href="assets/img/certs/lumsmart.jpg" target="_blank" rel="noopener">
+        <a class="dealer-card dealer-card--cert" href="assets/img/certs/lumsmart.jpg" target="_blank" rel="noopener noreferrer">
           <p class="dealer-card__name">LumSmart</p>
           <p class="dealer-card__cat">Светотехническая продукция ТМ LUMSMART и LS</p>
           <p class="dealer-card__doc">Официальный дилер</p>
         </a>
-        <a class="dealer-card dealer-card--cert" href="assets/img/certs/katusha.jpg" target="_blank" rel="noopener">
+        <a class="dealer-card dealer-card--cert" href="assets/img/certs/katusha.jpg" target="_blank" rel="noopener noreferrer">
           <p class="dealer-card__name">КАТЮША</p>
           <p class="dealer-card__cat">Продажа, установка и обслуживание климатического оборудования</p>
           <p class="dealer-card__doc">Официальный дилер</p>
         </a>
-        <a class="dealer-card dealer-card--cert" href="assets/img/certs/merkor.jpg" target="_blank" rel="noopener">
+        <a class="dealer-card dealer-card--cert" href="assets/img/certs/merkor.jpg" target="_blank" rel="noopener noreferrer">
           <p class="dealer-card__name">Меркор</p>
           <p class="dealer-card__cat">Кабель, кабеленесущие системы, огнестойкие кабельные линии</p>
           <p class="dealer-card__doc">Официальный дилер</p>
@@ -749,15 +749,15 @@
       </div>
 
       <div class="certs">
-        <a class="cert" href="assets/img/certs/lumsmart.jpg" target="_blank" rel="noopener">
+        <a class="cert" href="assets/img/certs/lumsmart.jpg" target="_blank" rel="noopener noreferrer">
           <img src="assets/img/certs/lumsmart.jpg" alt="Сертификат официального дилера LumSmart" loading="lazy" width="1100" height="779">
           <span>LumSmart · официальный дилер</span>
         </a>
-        <a class="cert" href="assets/img/certs/katusha.jpg" target="_blank" rel="noopener">
+        <a class="cert" href="assets/img/certs/katusha.jpg" target="_blank" rel="noopener noreferrer">
           <img src="assets/img/certs/katusha.jpg" alt="Сертификат дилера КАТЮША" loading="lazy" width="778" height="1100">
           <span>КАТЮША · официальный дилер</span>
         </a>
-        <a class="cert" href="assets/img/certs/merkor.jpg" target="_blank" rel="noopener">
+        <a class="cert" href="assets/img/certs/merkor.jpg" target="_blank" rel="noopener noreferrer">
           <img src="assets/img/certs/merkor.jpg" alt="Сертификат официального дилера Меркор" loading="lazy">
           <span>Меркор · официальный дилер</span>
         </a>
@@ -984,12 +984,13 @@
           <div class="hp" aria-hidden="true">
             <label for="f-website">Сайт</label>
             <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            <input id="f-ts" name="ts" type="hidden" value="">
           </div>
 
           <div class="field field--check">
             <label class="check">
               <input id="f-consent" name="consent" type="checkbox" value="1" required>
-              <span>Согласен на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span>
+              <span>Согласен на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a></span>
             </label>
             <p class="field__error" id="f-consent-error" aria-live="polite"></p>
           </div>

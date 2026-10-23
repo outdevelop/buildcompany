@@ -1341,9 +1341,12 @@ button { font: inherit; }
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--c);
     box-shadow: 0 0 0 1px rgba(230, 236, 241, .3);
   }
+  .hero__legend i.l1 { background: var(--w-brown); }
+  .hero__legend i.l2 { background: #121212; }
+  .hero__legend i.l3 { background: var(--w-grey); }
+  .hero__legend i.n { background: var(--w-blue); }
   .hero__legend i.pe { background: repeating-linear-gradient(135deg, var(--w-yellow) 0 3px, var(--w-green) 3px 5px); }
   .hero__legend-mark { flex-basis: 100%; justify-content: center; }
 

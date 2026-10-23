@@ -1,6 +1,18 @@
 (function () {
   'use strict';
 
+  /* frame-guard: защита от встраивания сайта в чужую страницу (кликджекинг).
+     На GitHub Pages нельзя задать заголовок frame-ancestors, поэтому проверяем в браузере. */
+  if (window.top !== window.self) {
+    try {
+      window.top.location.replace(window.self.location.href);
+    } catch (e) {
+      document.documentElement.style.display = 'none';
+    }
+    return;
+  }
+  /* /frame-guard */
+
   // Куда отправлять заявку. send.php работает на любом хостинге с PHP.
   // Пустая строка включает демо-режим: форма проверяется, но никуда не отправляется.
   var FORM_ENDPOINT = 'send.php';
@@ -106,8 +118,11 @@
   document.addEventListener('click', function (e) {
     var trigger = e.target.closest('[data-service]');
     if (!trigger) return;
-    var box = form.querySelector('input[name="services[]"][value="' + trigger.getAttribute('data-service') + '"]');
-    if (box) box.checked = true;
+    var wanted = trigger.getAttribute('data-service');
+    // Без сборки CSS-селектора из строки: просто сравниваем значения
+    Array.prototype.forEach.call(form.querySelectorAll('input[name="services[]"]'), function (box) {
+      if (box.value === wanted) box.checked = true;
+    });
   });
 
   function setError(input, message) {
@@ -154,11 +169,26 @@
     });
   });
 
-  function showStatus(message, kind) {
-    status.innerHTML = message;
+  // Сообщение собирается из текстовых узлов, без innerHTML
+  function showStatus(message, kind, withPhone) {
+    status.textContent = message;
+    if (withPhone) {
+      var link = document.createElement('a');
+      link.href = 'tel:+79953690721';
+      link.textContent = '+7 (995) 369-07-21';
+      status.appendChild(document.createTextNode(' '));
+      status.appendChild(link);
+      status.appendChild(document.createTextNode('.'));
+    }
     status.classList.toggle('is-info', kind === 'info');
     status.hidden = false;
   }
+
+  // Метка времени открытия формы: сервер отклоняет заявки, отправленные быстрее, чем может человек
+  function stampForm() {
+    if (form.elements.ts) form.elements.ts.value = String(Date.now());
+  }
+  stampForm();
 
   function showDone() {
     form.hidden = true;
@@ -168,6 +198,7 @@
 
   card.querySelector('[data-form-reset]').addEventListener('click', function () {
     form.reset();
+    stampForm();
     status.hidden = true;
     done.hidden = true;
     form.hidden = false;
@@ -187,7 +218,7 @@
     }
 
     if (!FORM_ENDPOINT) {
-      showStatus('Демо-режим: заявка не отправлена. Чтобы форма заработала, разместите сайт на хостинге с PHP и укажите адрес обработчика в <code>assets/js/main.js</code>.', 'info');
+      showStatus('Демо-режим: заявка не отправлена. Чтобы форма заработала, разместите сайт на хостинге с PHP.', 'info');
       return;
     }
 
@@ -197,10 +228,13 @@
     fetch(FORM_ENDPOINT, {
       method: 'POST',
       body: new FormData(form),
-      headers: { Accept: 'application/json' }
+      headers: { Accept: 'application/json' },
+      credentials: 'same-origin',
+      redirect: 'error'
     })
       .then(function (res) {
         return res.json().catch(function () { return {}; }).then(function (data) {
+          if (res.status === 429) throw new Error('rate');
           if (!res.ok || !data.ok) throw new Error('send failed');
         });
       })
@@ -208,8 +242,12 @@
         form.reset();
         showDone();
       })
-      .catch(function () {
-        showStatus('Не удалось отправить заявку. Попробуйте ещё раз через минуту или позвоните нам: <a href="tel:+79953690721">+7&nbsp;(995)&nbsp;369-07-21</a>.');
+      .catch(function (err) {
+        if (err && err.message === 'rate') {
+          showStatus('Слишком много заявок подряд. Подождите несколько минут или позвоните нам:', null, true);
+        } else {
+          showStatus('Не удалось отправить заявку. Попробуйте ещё раз через минуту или позвоните нам:', null, true);
+        }
       })
       .then(function () {
         submit.disabled = false;
